@@ -1,0 +1,23 @@
+<ion-slides *ngIf="startQz != ''">
+    <ion-slide *ngFor="let questionContent of questionList | slice:qCount:qCount+1; let i=index" >
+      <ion-col size="12">
+        <div [innerHTML]="questionContent.name"> </div> 
+      </ion-col>
+       <ion-col size="12">
+        <ion-list >
+          <ion-item   >
+            <ion-label> {{questionContent.option.A}} </ion-label>
+          </ion-item>   
+          <ion-item   >
+            <ion-label> {{questionContent.option.B}} </ion-label>
+          </ion-item> 
+          <ion-item   >
+            <ion-label> {{questionContent.option.C}} </ion-label>
+          </ion-item>
+          <ion-item   >
+            <ion-label> {{questionContent.option.D}} </ion-label>
+          </ion-item>  
+        </ion-list>
+      </ion-col>
+    </ion-slide>
+  </ion-slides>

@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Result</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        Section : Higher section 2	
+      </ion-col>
+      <ion-col size="6">
+        Total Question : {{ shortResult.totQuestion }}
+      </ion-col>
+      <ion-col size="6">
+        Correct : {{ shortResult.correctChoiceCount }}
+      </ion-col>
+      <ion-col size="4">
+        Incorrect : {{ shortResult.incorrectChoiceCount }}
+      </ion-col>
+      <ion-col size="4">
+        Incorrect : {{ shortResult.incorrectChoiceCount }}
+      </ion-col>
+      <ion-col size="4">
+        Unattended : {{ shortResult.unattended }}
+      </ion-col>
+      <ion-col size="12">
+        Time Taken : {{ shortResult.timeTaken }} Second
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-card *ngFor="let item of resultSheet">
+    <ion-card-header>
+      <ion-card-title> <div [innerHTML]="item.questionName"> </div></ion-card-title>
+    </ion-card-header>
+  
+     <ion-card-content>
+      <ion-grid >
+        <ion-row >
+          <ion-col size="6" >Correct Choice  : </ion-col>
+          <ion-col size="4"> {{item.correctChoice}}</ion-col>
+        </ion-row>
+        <ion-row >
+          <ion-col size="6" >User Choice  : </ion-col>
+          <ion-col size="4"> {{item.userChoice}} </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
