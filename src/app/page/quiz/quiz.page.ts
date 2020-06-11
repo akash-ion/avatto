@@ -59,12 +59,10 @@ export class QuizPage implements OnInit {
       this.timer = localStorage.getItem('timer')
       this.startQz = "quiz started";
       this.startTimer(this.timer);
-      console.log(this.postAns);
       this.timeout = setTimeout(() => {
         for(var key in this.postAns){
             let className = ".questionNum"+i;
             const btnElement = (<HTMLElement>this.el.nativeElement).querySelector(className);
-            console.log(this.postAns[key]['markReviewd']);
             if(this.postAns[key]['markReviewd'] == 'true'){
                 this.renderer.setStyle(
                 btnElement,
@@ -109,7 +107,6 @@ export class QuizPage implements OnInit {
     }
     let i = 0;
     while(i<=qsNo){     
-      console.log(i);
       if(!this.postAns[i]){
         let className = ".questionNum"+i;
         const btnElement = (<HTMLElement>this.el.nativeElement).querySelector(className); 
@@ -124,14 +121,12 @@ export class QuizPage implements OnInit {
   }
 
   selectAnswer(params, questionId,rightChoice,selector){
-    console.log(selector);
     let qsAns = {};
     qsAns['choice'] = params;
     qsAns['id'] = questionId;
     qsAns['rightChoice'] = rightChoice;
     this.postAns[selector] = qsAns;
     localStorage.setItem("postAns",JSON.stringify(this.postAns));
-    console.log(params);
     this.buttonValue = params;
     this.nextBtnActive = "true";
   }
@@ -194,7 +189,6 @@ export class QuizPage implements OnInit {
         '#7c58b8'
       );
     }
-    console.log(this.postAns);
   }
 
   async submitQuiz(){
