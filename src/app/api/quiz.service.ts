@@ -5,7 +5,7 @@ import { ApiService } from '../api/api.service';
   providedIn: 'root'
 })
 export class QuizService {
-  url: string = 'http://avatto.in/demo/wp-json/avatto/v2';
+  url: string = 'https://avatto.in/wp-json/avatto/v2';
   constructor(public http: HttpClient,public api: ApiService) { }
 
   get(endpoint: string, params?: any, reqOpts?: any) {

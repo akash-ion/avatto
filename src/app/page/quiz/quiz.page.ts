@@ -202,7 +202,7 @@ export class QuizPage implements OnInit {
     loading.dismiss();	
     this.router.navigate(['/result'])
 
-    /*this.quiz.submitQuiz(ansSheet).subscribe(async (resp) => {
+    this.quiz.submitQuiz(ansSheet).subscribe(async (resp) => {
         loading.dismiss();	
         this.questionList = [];
         localStorage.clear();
@@ -218,7 +218,7 @@ export class QuizPage implements OnInit {
             duration: 2000
         });
         toast.present();
-    }); */
+    });
   }
 
   startTimer(duration) {
